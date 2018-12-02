@@ -3,20 +3,20 @@ frequencies = set()
 freq = 0
 
 def looplist(loop=True):
-	global file, freq, frequencies
-	while True:
-		for line in file:
-			if line[0] == '+':
-				freq += int(line[1:])
-			elif line[0] == '-':
-				freq -= int(line[1:])
+    global file, freq, frequencies
+    while True:
+        for line in file:
+            if line[0] == '+':
+                freq += int(line[1:])
+            elif line[0] == '-':
+                freq -= int(line[1:])
 
-			if freq in frequencies:
-				return freq
-			else:
-				frequencies.add(freq)
-		if loop == False:
-			return freq
+            if freq in frequencies:
+                return freq
+            else:
+                frequencies.add(freq)
+        if loop == False:
+            return freq
 
 # a)
 print(f'a): {looplist(False)}')
