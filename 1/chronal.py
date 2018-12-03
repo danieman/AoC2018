@@ -1,4 +1,4 @@
-file = [line.strip() for line in open('input.txt')]
+file = [int(line.strip()) for line in open('input.txt')]
 frequencies = set()
 freq = 0
 
@@ -6,11 +6,7 @@ def looplist(loop=True):
     global file, freq, frequencies
     while True:
         for line in file:
-            if line[0] == '+':
-                freq += int(line[1:])
-            elif line[0] == '-':
-                freq -= int(line[1:])
-
+            freq += line
             if freq in frequencies:
                 return freq
             else:
